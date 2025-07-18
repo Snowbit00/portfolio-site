@@ -2,8 +2,154 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная — Я программист</title>
+    <title>Главная — Кот-программист</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 🐱 КОТ */
+
+        .cat-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px auto;
+        }
+
+        .cat {
+            position: relative;
+            width: 220px;
+            height: 180px;
+            background: repeating-linear-gradient(
+                to bottom,
+                #888,
+                #888 10px,
+                #999 10px,
+                #999 20px
+            );
+            border-radius: 100px 100px 60px 60px;
+        }
+
+        /* УШИ */
+        .ear {
+            width: 40px;
+            height: 40px;
+            background-color: #888;
+            position: relative;
+            top: -20px;
+            border-radius: 50% 50% 0 0;
+            transform: rotate(0deg);
+        }
+
+        .ear.left {
+            left: 8px;
+			transform: rotate(-43deg);
+			transform-origin: bottom right;
+        }
+
+        .ear.right {
+            right: -170px;
+			transform: rotate(55deg);
+			transform-origin: bottom right;
+        }
+
+        /* ГЛАЗА */
+        .eye {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 40px;
+        }
+
+        .eye::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: black;
+            border-radius: 50%;
+            margin: 6px auto;
+        }
+
+        .eye.left {
+            left: 50px;
+        }
+
+        .eye.right {
+            right: 50px;
+        }
+
+        /* НОС */
+        .nose {
+            width: 12px;
+            height: 8px;
+            background-color: pink;
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50% 50% 50% 50%;
+        }
+
+        /* РОТ */
+        .mouth {
+            width: 20px;
+            height: 50px;
+            border-bottom: 2px solid black;
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* УСИКИ */
+        .whiskers {
+            position: absolute;
+            top: 75px;
+            width: 100%;
+        }
+
+        .whisker {
+            height: 0.5px;
+            background-color: #222;
+            width: 30px;
+            position: absolute;
+        }
+
+        .whisker.left1 { left: 10px; top: -8px; }
+        .whisker.left2 { left: 10px; top: 0px; }
+        .whisker.left3 { left: 10px; top: 8px; }
+
+        .whisker.right1 { right: 10px; top: -8px; }
+        .whisker.right2 { right: 10px; top: 0px; }
+        .whisker.right3 { right: 10px; top: 8px; }
+
+        /* ЛАПЫ */
+        .paw-l, .paw-r {
+            width: 30px;
+            height: 90px;
+            background-color: #D2D2D4;
+            border-radius: 40px;
+            position: absolute;
+            bottom: -30px;
+            animation: paw-swing 2s infinite ease-in-out;
+        }
+
+        .paw-l {
+            left: 30px;
+            animation-delay: 0s;
+        }
+
+        .paw-r {
+            right: 30px;
+            animation-delay: 1s;
+        }
+
+        @keyframes paw-swing {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -23,10 +169,32 @@
         <h2>Добро пожаловать!</h2>
         <p>Этот сайт создан для продвижения меня как разработчика. Здесь вы узнаете, где я работаю, чему учусь, какие цели ставлю и где читать мои мысли в Telegram.</p>
     </div>
+
+    <!-- 🐱 КОТ -->
+    <div class="section cat-container">
+        <div class="cat">
+		    <div class="ear left"></div>
+            <div class="ear right"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+            <div class="whiskers">
+                <div class="whisker left1"></div>
+                <div class="whisker left2"></div>
+                <div class="whisker left3"></div>
+                <div class="whisker right1"></div>
+                <div class="whisker right2"></div>
+                <div class="whisker right3"></div>
+            </div>
+            <div class="paw-l"></div>
+            <div class="paw-r"></div>
+        </div>
+    </div>
 </main>
 
 <footer>
-    &copy; 2025 Мой сайт. Разработано с любовью к коду.
+    &copy; 2025 Мой сайт. Разработано с любовью к коду и котам 🐾
 </footer>
 </body>
 </html>
